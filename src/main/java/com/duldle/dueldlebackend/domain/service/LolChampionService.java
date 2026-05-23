@@ -1,6 +1,7 @@
 package com.duldle.dueldlebackend.domain.service;
 
 import com.duldle.dueldlebackend.api.dto.LolChampionDTO;
+import com.duldle.dueldlebackend.api.dto.input.LolChampionBulkInput;
 import com.duldle.dueldlebackend.api.dto.input.LolChampionInput;
 import com.duldle.dueldlebackend.api.dto_mapper.LolChampionMapper;
 import com.duldle.dueldlebackend.domain.model.LolChampion;
@@ -28,5 +29,15 @@ public class LolChampionService {
     public LolChampionDTO create(LolChampionInput championInputData){
         LolChampion lolChampionModel = mapper.fromDTO(championInputData);
         return mapper.fromEntity(lolChampionRepository.save(lolChampionModel));
+    }
+
+    @Transactional
+    public List<LolChampion> createBulking(LolChampionBulkInput championInputData){
+        List<LolChampion> champions = championInputData.champions()
+                .stream()
+                .map(dto -> {
+                    return mapper.fromDTO(dto);
+                }).toList();
+        return lolChampionRepository.saveAll(champions);
     }
 }

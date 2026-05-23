@@ -10,5 +10,9 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
+      jbdc:
+        batch_size: 10
+        order_inserts: true
+        order_updates: true
       ddl-auto: update
     show-sql: true
