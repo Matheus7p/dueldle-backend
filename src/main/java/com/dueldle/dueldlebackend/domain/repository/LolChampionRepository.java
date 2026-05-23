@@ -1,6 +1,6 @@
-package com.duldle.dueldlebackend.domain.repository;
+package com.dueldle.dueldlebackend.domain.repository;
 
-import com.duldle.dueldlebackend.domain.model.LolChampion;
+import com.dueldle.dueldlebackend.domain.model.LolChampion;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

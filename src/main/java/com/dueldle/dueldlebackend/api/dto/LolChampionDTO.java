@@ -1,4 +1,4 @@
-package com.duldle.dueldlebackend.api.dto;
+package com.dueldle.dueldlebackend.api.dto;
 
 import lombok.Getter;
 import lombok.Setter;

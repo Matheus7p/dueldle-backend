@@ -1,8 +1,8 @@
-package com.duldle.dueldlebackend.api.dto_mapper;
+package com.dueldle.dueldlebackend.api.dto_mapper;
 
-import com.duldle.dueldlebackend.api.dto.LolChampionDTO;
-import com.duldle.dueldlebackend.api.dto.input.LolChampionInput;
-import com.duldle.dueldlebackend.domain.model.LolChampion;
+import com.dueldle.dueldlebackend.api.dto.LolChampionDTO;
+import com.dueldle.dueldlebackend.api.dto.input.LolChampionInput;
+import com.dueldle.dueldlebackend.domain.model.LolChampion;
 import org.mapstruct.Mapper;
 
 import static org.mapstruct.NullValueCheckStrategy.ALWAYS;

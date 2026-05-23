@@ -1,4 +1,4 @@
-package com.duldle.dueldlebackend;
+package com.dueldle.dueldlebackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

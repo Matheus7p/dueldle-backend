@@ -1,7 +1,6 @@
-package com.duldle.dueldlebackend.api.dto.input;
+package com.dueldle.dueldlebackend.api.dto.input;
 
 import jakarta.validation.constraints.Size;
-import org.hibernate.annotations.BatchSize;
 
 import java.util.List;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package com.duldle.dueldlebackend.api.dto.input;
+package com.dueldle.dueldlebackend.api.dto.input;
 
 import java.util.Set;
 

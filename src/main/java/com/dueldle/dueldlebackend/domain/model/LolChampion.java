@@ -1,4 +1,4 @@
-package com.duldle.dueldlebackend.domain.model;
+package com.dueldle.dueldlebackend.domain.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
