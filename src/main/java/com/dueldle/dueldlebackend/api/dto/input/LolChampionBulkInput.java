@@ -16,6 +16,6 @@ public record LolChampionBulkInput(
         Integer release_date,
         String character_img_url,
 
-        @Size(min = 1, max = 10, message = "Maximo de 10 campeoes")
+        @Size(min = 1, max = 10, message = "Maximum 10 champions")
         List<LolChampionInput> champions
 ) {}

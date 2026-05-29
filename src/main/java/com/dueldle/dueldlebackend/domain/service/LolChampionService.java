@@ -27,8 +27,8 @@ public class LolChampionService {
 
     @Transactional
     public LolChampionDTO create(LolChampionInput championInputData){
-        LolChampion lolChampionModel = mapper.fromDTO(championInputData);
-        return mapper.fromEntity(lolChampionRepository.save(lolChampionModel));
+        LolChampion lolChampionModel = mapper.toEntity(championInputData);
+        return mapper.toDTO(lolChampionRepository.save(lolChampionModel));
     }
 
     @Transactional
@@ -36,7 +36,7 @@ public class LolChampionService {
         List<LolChampion> champions = championInputData.champions()
                 .stream()
                 .map(dto -> {
-                    return mapper.fromDTO(dto);
+                    return mapper.toEntity(dto);
                 }).toList();
         return lolChampionRepository.saveAll(champions);
     }

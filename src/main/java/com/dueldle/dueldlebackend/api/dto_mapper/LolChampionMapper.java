@@ -14,6 +14,6 @@ import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
         nullValuePropertyMappingStrategy = IGNORE
 )
 public interface LolChampionMapper {
-    LolChampionDTO fromEntity(final LolChampion entity);
-    LolChampion fromDTO(final LolChampionInput dto);
+    LolChampionDTO toDTO(final LolChampion entity);
+    LolChampion toEntity(final LolChampionInput dto);
 }
