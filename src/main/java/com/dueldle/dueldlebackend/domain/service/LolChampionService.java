@@ -8,6 +8,8 @@ import com.dueldle.dueldlebackend.domain.exception.LolChampionAlreadyExistsExcep
 import com.dueldle.dueldlebackend.domain.model.LolChampion;
 import com.dueldle.dueldlebackend.domain.repository.LolChampionRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,11 +24,15 @@ public class LolChampionService {
     private final LolChampionMapper mapper;
 
 
+    @Cacheable("champions")
     public List<LolChampion> findAll(){
+        System.out.println(">> BUSCANDO NO BANCO");
         return lolChampionRepository.findAll();
     }
 
+
     @Transactional
+    @CacheEvict(value = "champions", allEntries = true)
     public LolChampionDTO create(LolChampionInput championInputData){
         if (lolChampionRepository.existsByChampionName(championInputData.championName())) {
             throw new LolChampionAlreadyExistsException(championInputData.championName());
@@ -37,6 +43,7 @@ public class LolChampionService {
     }
 
     @Transactional
+    @CacheEvict(value = "champions", allEntries = true)
     public List<LolChampion> createBulking(LolChampionBulkInput championInputData){
         List<String> existingNames = championInputData.champions()
                 .stream()
