@@ -13,10 +13,11 @@ import java.util.Set;
 public class LolChampion {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String champion_id;
+    @Column(name = "champion_id")
+    private String championId;
 
-    @Column(nullable = false)
-    private String champion_name;
+    @Column(name = "champion_name", nullable = false)
+    private String championName;
 
     @Column(nullable = false)
     private String gender;
@@ -36,10 +37,10 @@ public class LolChampion {
     @Column(nullable = false)
     private Set<String> regions;
 
-    @Column(nullable = false)
-    private Integer release_date;
+    @Column(name = "release_date", nullable = false)
+    private Integer releaseDate;
 
-    @Column(nullable = false)
-    private String character_img_url;
+    @Column(name = "character_img_url", nullable = false)
+    private String characterImgUrl;
 
 }

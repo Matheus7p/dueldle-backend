@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LolChampionRepository extends JpaRepository<LolChampion, String> {
+    boolean existsByChampionName(String championName);
 }
