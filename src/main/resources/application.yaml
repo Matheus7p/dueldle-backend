@@ -1,3 +1,21 @@
 spring:
   application:
     name: dueldle-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5433/dueldle
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      jdbc:
+        batch_size: 10
+        order_inserts: true
+        order_updates: true
+      ddl-auto: create
+    show-sql: true
+
+api:
+  secret-key: ${API_SECRET_KEY:dev-secret-key}
